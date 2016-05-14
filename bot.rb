@@ -7,8 +7,8 @@ bot = Cinch::Bot.new do
     c.channels = ['#jade']
   end
 
-  on :message, 'hello' do |m|
-    m.reply 'Omghi :D'
+  on :message, /^(.)$/ do |m, char|
+    m.reply "You just typed #{char}!"
   end
 end
 
