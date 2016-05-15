@@ -1,9 +1,8 @@
-require 'selenium-webdriver'
 require 'yaml'
 require 'capybara'
 require 'capybara/dsl'
 
-Capybara.app_host = 'https://myturbotax.intuit.com/'
+Capybara.app_host = 'https://myturbotax.intuit.com'
 Capybara.register_driver :selenium do |app|
   Capybara::Selenium::Driver.new(app, :browser => :chrome)
 end
