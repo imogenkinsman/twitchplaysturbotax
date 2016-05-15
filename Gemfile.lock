@@ -1,13 +1,33 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    archive-zip (0.7.0)
+      io-like (~> 0.3.0)
+    childprocess (0.5.9)
+      ffi (~> 1.0, >= 1.0.11)
+    chromedriver-helper (1.0.0)
+      archive-zip (~> 0.7.0)
+      nokogiri (~> 1.6)
     cinch (2.3.1)
+    ffi (1.9.10)
+    io-like (0.3.0)
+    mini_portile2 (2.0.0)
+    nokogiri (1.6.7.2)
+      mini_portile2 (~> 2.0.0.rc2)
+    rubyzip (1.2.0)
+    selenium-webdriver (2.53.0)
+      childprocess (~> 0.5)
+      rubyzip (~> 1.0)
+      websocket (~> 1.0)
+    websocket (1.2.3)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  chromedriver-helper
   cinch (= 2.3.1)
+  selenium-webdriver
 
 BUNDLED WITH
    1.11.2
