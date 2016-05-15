@@ -24,4 +24,24 @@ class Driver
     click_button 'Skip for now'
   end
 
+  def click_button(text)
+    click_button(text)
+  end
+
+  def click_link(link)
+    click_link(link)
+  end
+
+  def check(checkbox)
+    check(checkbox)
+  end
+
+  def uncheck(checkbox)
+    uncheck(checkbox)
+  end
+
+  def choose(radio)
+    choose(radio)
+  end
+
 end

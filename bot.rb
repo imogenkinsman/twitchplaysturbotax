@@ -23,9 +23,25 @@ bot = Cinch::Bot.new do
     @driver.sign_in
   end
 
-  # on :message, '!help' do |m|
-    # m.reply ""
-  # end
+  on :message, /^!button (.*)$/ do |m, button|
+    @driver.click_button(button)
+  end
+
+  on :message, /^!link (.*)$/ do |m, link|
+    @driver.click_link(link)
+  end
+
+  on :message, /^!check (.*)$/ do |m, checkbox|
+    @driver.check(checkbox)
+  end
+
+  on :message, /^!uncheck (.*)$/ do |m, checkbox|
+    @driver.uncheck(checkbox)
+  end
+
+  on :message, /^!choose (.*)$/ do |m, radio|
+    @driver.choose(radio)
+  end
 end
 
 bot.start
