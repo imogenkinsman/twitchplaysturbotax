@@ -1,5 +1,6 @@
 require 'cinch'
 require 'yaml'
+require './driver'
 
 bot = Cinch::Bot.new do
 
@@ -13,6 +14,18 @@ bot = Cinch::Bot.new do
   on :message, /^(.)$/ do |m, char|
     m.reply "You just typed #{char}!"
   end
+
+  on :message, /^!boot$/ do |m|
+    @driver ||= Driver.new
+  end
+
+  on :message, /^!login$/ do |m|
+    @driver.sign_in
+  end
+
+  # on :message, '!help' do |m|
+    # m.reply ""
+  # end
 end
 
 bot.start
