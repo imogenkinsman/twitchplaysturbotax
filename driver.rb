@@ -17,9 +17,10 @@ class Driver
 
   def sign_in
     visit '/'
-    fill_in('Email', with: 'twitchplaysturbotax')
-    password = YAML::load(File.open('config.yml'))['ttpass']
-    fill_in('Password', with: password)
+    config = YAML::load(File.open('config.yml'))
+    fill_in('Email', with: config['ttuser'])
+    password = config['ttpass']
+    fill_in('Password', with: config['ttpass'])
     click_button 'Sign In'
     click_button 'Skip for now'
   end
