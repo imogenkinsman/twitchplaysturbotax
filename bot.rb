@@ -42,6 +42,10 @@ bot = Cinch::Bot.new do
   on :message, /^!choose (.*)$/ do |m, radio|
     @driver.choose(radio)
   end
+
+  on :message, /^!fill (.*):(.*)$/ do |m, form, text|
+    @driver.fill_in(form, text)
+  end
 end
 
 bot.start

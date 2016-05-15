@@ -44,4 +44,7 @@ class Driver
     choose(radio)
   end
 
+  def fill_in(form, text)
+    fill_in(form, with: text)
+  end
 end
