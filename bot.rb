@@ -11,39 +11,35 @@ bot = Cinch::Bot.new do
     c.channels = ['#twitchplaysturbotax']
   end
 
-  on :message, /^(.)$/ do |m, char|
-    m.reply "You just typed #{char}!"
-  end
-
-  on :message, /^!boot$/ do |m|
+  on :message, /^boot$/ do |m|
     @driver ||= Driver.new
   end
 
-  on :message, /^!login$/ do |m|
+  on :message, /^login$/ do |m|
     @driver.sign_in
   end
 
-  on :message, /^!button (.*)$/ do |m, button|
+  on :message, /^button (.*)$/ do |m, button|
     @driver.click_button(button)
   end
 
-  on :message, /^!link (.*)$/ do |m, link|
+  on :message, /^link (.*)$/ do |m, link|
     @driver.click_link(link)
   end
 
-  on :message, /^!check (.*)$/ do |m, checkbox|
+  on :message, /^check (.*)$/ do |m, checkbox|
     @driver.check(checkbox)
   end
 
-  on :message, /^!uncheck (.*)$/ do |m, checkbox|
+  on :message, /^uncheck (.*)$/ do |m, checkbox|
     @driver.uncheck(checkbox)
   end
 
-  on :message, /^!choose (.*)$/ do |m, radio|
+  on :message, /^choose (.*)$/ do |m, radio|
     @driver.choose(radio)
   end
 
-  on :message, /^!fill (.*):(.*)$/ do |m, form, text|
+  on :message, /^fill (.*):(.*)$/ do |m, form, text|
     @driver.fill_in(form, text)
   end
 end
